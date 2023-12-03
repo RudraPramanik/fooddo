@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Image } from 'react-native';
-const CategoryItem = (category, selected) => {
+import { SHADOWS } from '../constants/theme';
+const CategoryItem = ({ category, selected }) => {
+  console.log(category, 'cat');
   return (
     <View
       style={{
@@ -26,6 +28,7 @@ const CategoryItem = (category, selected) => {
       <Text style={{ fontSize: 13, fontFamily: 'regular' }}>
         {category.title}
       </Text>
+      {/* <Text>lele pagla</Text> */}
     </View>
   );
 };
