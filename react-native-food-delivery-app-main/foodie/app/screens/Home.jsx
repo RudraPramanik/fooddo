@@ -6,11 +6,16 @@ import pages from './page.style';
 import uidata from '../constants/uidata';
 import HomeHeader from '../components/HomeHeader';
 import CategoryList from '../components/CategoryList';
+import ChoiceList from '../components/ChoiceList';
+import Headers from '../components/Headers';
+import NearbyRestaurants from '../components/Shimmers/NearbyRestaurants';
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSection, setSelectedSection] = useState(null);
   const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedChoice, setSelectedChoice] = useState(null);
+  console.log(selectedChoice);
 
   return (
     <SafeAreaView>
@@ -26,6 +31,14 @@ const Home = () => {
               setSelectedSection={setSelectedSection}
               setSelectedValue={setSelectedValue}
             />
+            <ChoiceList
+              setSelectedChoice={setSelectedChoice}
+              setSelectedSection={setSelectedSection}
+            />
+            <View>
+              <Headers heading="nearby restaurants" />
+              <NearbyRestaurants />
+            </View>
           </ScrollView>
         </View>
       </View>

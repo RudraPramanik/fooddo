@@ -1,9 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Image } from 'react-native';
-import { SHADOWS } from '../constants/theme';
+import { SHADOWS, COLORS } from '../constants/theme';
 const CategoryItem = ({ category, selected }) => {
-  console.log(category, 'cat');
   return (
     <View
       style={{

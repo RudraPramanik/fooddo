@@ -17,6 +17,20 @@ const CategoryList = ({
   const [selected, setSelected] = useState(null);
   const categories = [1, 2, 3, 4, 5];
 
+  const handleSelectedCategory = (item) => {
+    if (selected == item.value) {
+      setSelectedCategory(null);
+      setSelected(null);
+      setSelectedSection(null);
+      setSelectedValue(null);
+    } else {
+      setSelectedCategory(item._id);
+      setSelected(item.value);
+      setSelectedSection('category');
+      setSelectedValue(item.title);
+    }
+  };
+
   return (
     <View>
       <FlatList
@@ -26,7 +40,7 @@ const CategoryList = ({
         style={{ marginTop: 5 }}
         keyExtractor={(item) => item._id}
         renderItem={({ item }) => (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleSelectedCategory(item)}>
             <Text>
               <CategoryItem selected={selected} category={item} />{' '}
             </Text>
